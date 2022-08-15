@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+
+use function Ramsey\Uuid\v1;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function(){
-    return view('home');
+    return view('Books.home');
 });
+
+Route::resource('books', BookController::class);
