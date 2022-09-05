@@ -22,8 +22,8 @@
       @endif
         <form method="post" action="{{ route('books.update', $book->id ) }}">
             <div class="form-group">
+              @method('PATCH')
                 @csrf
-                @method('PATCH')
                 <label for="country_name">Book Title:</label>
                 <input type="text" class="form-control" name="title" value="{{ $book->title }}"/>
             </div>
